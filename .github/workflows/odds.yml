@@ -1,0 +1,41 @@
+# Daily odds feed for FPL Pro: one request to The Odds API (2 credits), derived numbers -> odds.json.
+# All budget guards live in fetch_odds.py (fixture in the next 8 days, own ledger state.json <= 200
+# credits/month, account quota >= 150, no retries). The key is only ever read from the repository secret.
+name: odds
+
+on:
+  schedule:
+    - cron: "30 5 * * *"     # 05:30 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: odds-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch odds (guarded, at most one paid request)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python3 fetch_odds.py
+
+      - name: Commit odds.json + ledger
+        if: always()
+        run: |
+          git config user.name "odds-bot"
+          git config user.email "odds-bot@users.noreply.github.com"
+          git add odds.json state.json
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "odds $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "sample-1",
+    "sport_key": "soccer_epl",
+    "sport_title": "EPL",
+    "commence_time": "2026-11-21T15:00:00Z",
+    "home_team": "Arsenal",
+    "away_team": "Chelsea",
+    "bookmakers": [
+      {"key": "bookA", "title": "Book A", "last_update": "2026-11-19T05:00:00Z", "markets": [
+        {"key": "h2h", "outcomes": [{"name": "Arsenal", "price": 1.80}, {"name": "Chelsea", "price": 4.33}, {"name": "Draw", "price": 3.80}]},
+        {"key": "totals", "outcomes": [{"name": "Over", "price": 1.85, "point": 2.5}, {"name": "Under", "price": 1.95, "point": 2.5}]}
+      ]},
+      {"key": "bookB", "title": "Book B", "last_update": "2026-11-19T05:00:00Z", "markets": [
+        {"key": "h2h", "outcomes": [{"name": "Arsenal", "price": 1.83}, {"name": "Chelsea", "price": 4.20}, {"name": "Draw", "price": 3.75}]},
+        {"key": "totals", "outcomes": [{"name": "Over", "price": 1.90, "point": 2.5}, {"name": "Under", "price": 1.90, "point": 2.5},
+                                       {"name": "Over", "price": 3.10, "point": 3.5}, {"name": "Under", "price": 1.36, "point": 3.5}]}
+      ]},
+      {"key": "bookC", "title": "Book C", "last_update": "2026-11-19T05:00:00Z", "markets": [
+        {"key": "h2h", "outcomes": [{"name": "Arsenal", "price": 1.78}, {"name": "Chelsea", "price": 4.50}, {"name": "Draw", "price": 3.90}]}
+      ]}
+    ]
+  },
+  {
+    "id": "sample-2",
+    "sport_key": "soccer_epl",
+    "sport_title": "EPL",
+    "commence_time": "2026-11-22T14:00:00Z",
+    "home_team": "Brighton and Hove Albion",
+    "away_team": "Hull City",
+    "bookmakers": [
+      {"key": "bookA", "title": "Book A", "last_update": "2026-11-19T05:00:00Z", "markets": [
+        {"key": "h2h", "outcomes": [{"name": "Brighton and Hove Albion", "price": 1.57}, {"name": "Hull City", "price": 5.75}, {"name": "Draw", "price": 4.20}]},
+        {"key": "totals", "outcomes": [{"name": "Over", "price": 1.72, "point": 2.5}, {"name": "Under", "price": 2.10, "point": 2.5}]}
+      ]},
+      {"key": "bookB", "title": "Book B", "last_update": "2026-11-19T05:00:00Z", "markets": [
+        {"key": "h2h", "outcomes": [{"name": "Brighton and Hove Albion", "price": 1.60}, {"name": "Hull City", "price": 5.50}, {"name": "Draw", "price": 4.10}]}
+      ]}
+    ]
+  },
+  {
+    "id": "sample-3",
+    "sport_key": "soccer_epl",
+    "commence_time": "2026-11-22T16:30:00Z",
+    "home_team": "Real Madrid",
+    "away_team": "Getafe",
+    "bookmakers": [
+      {"key": "bookA", "markets": [{"key": "h2h", "outcomes": [{"name": "Real Madrid", "price": 1.3}, {"name": "Getafe", "price": 9.0}, {"name": "Draw", "price": 5.5}]}]}
+    ]
+  }
+]
